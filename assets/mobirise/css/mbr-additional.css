@@ -1669,6 +1669,30 @@ a {
   display: none;
 }
 
+.cid-uamAEYpSlu {
+  padding-top: 2rem;
+  padding-bottom: 0rem;
+  background-color: #163300;
+}
+.cid-uamAEYpSlu .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-uamAEYpSlu .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-uamAEYpSlu .mbr-section-title {
+  color: #ffffff;
+}
+.cid-uamAEYpSlu .mbr-section-subtitle {
+  color: #ffffff;
+}
+
 .cid-u9JD0QAIPB .mbr-fallback-image.disabled {
   display: none;
 }
