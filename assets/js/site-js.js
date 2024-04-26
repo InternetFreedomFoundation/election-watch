@@ -54,6 +54,8 @@ function checkAll() {
   reflowEntries();
 }
 
+
+
 function isItemInCategories(categories, visibleCategories) {
   return visibleCategories.some(function (id) {
     return categories.indexOf(id) >= 0;
@@ -119,6 +121,16 @@ function clearRightFilters() {
   });
   hideUnchecked(); // Trigger filter update after clearing
 }
+function deselectAllFilters() {
+  var checkboxes = document.querySelectorAll('input[type="checkbox"][name="filter"]');
+  checkboxes.forEach(function (box) {
+    box.checked = false;
+  });
+  hideUnchecked(); // Trigger filter update after deselecting all
+}
+
+// Event listener for Deselect All button
+document.getElementById('deselectAllFilters').addEventListener('click', deselectAllFilters);
 
 // Event listeners for Clear Filters buttons
 document.getElementById('clearLeftFilters').addEventListener('click', clearLeftFilters);
