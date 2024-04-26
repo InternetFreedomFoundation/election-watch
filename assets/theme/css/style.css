@@ -885,11 +885,11 @@ blockquote {
 }
 
 .mt-4 {
-  margin-top: 2rem !important;
+  margin-top: none;
 }
 
 .mb-4 {
-  margin-bottom: 2rem !important;
+  margin-bottom: none;
 }
 
 .container,
