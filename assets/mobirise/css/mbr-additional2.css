@@ -11,7 +11,7 @@ img,
 .plan,
 .card,
 .item-wrapper {
-  border-radius: 2rem !important;
+  border-radius: none;
 }
 .video-wrapper {
   overflow: hidden;
@@ -2900,4 +2900,13 @@ a {
 .cid-uajPOEtzmua .panel-title-edit,
 .cid-uajPOEtzmua .mbr-iconfont {
   color: #000000;
+}
+
+
+///
+
+.cid-uajPOEtzmub {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  background-color: #a0e1e1;
 }
