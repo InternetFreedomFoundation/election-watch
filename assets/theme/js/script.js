@@ -65,3 +65,23 @@ datepicker:!1})}))})}document.querySelectorAll('input[type="range"]').forEach(fu
 else document.querySelectorAll(".pie_progress").length&&("undefined"!==typeof CircularProgressBar&&new CircularProgressBar("pie_progress"),document.querySelectorAll(".pie_progress").forEach(function(a){C(a)}));if(n&&t)f(document).on("add.cards",function(a){f(a.target).hasClass("testimonials-slider")&&x(a.target)}).on("changeParameter.cards",function(a,b,d){"testimonialsSlides"===b&&0==f(a.target).find(".carousel-item.active").length&&A(a.target)});else"undefined"===typeof window.initTestimonialsPlugin&&
 (window.initTestimonialsPlugin=!0,document.querySelectorAll(".testimonials-slider").forEach(function(a){x(a)}));l(function(){n||Array.from(document.body.children).filter(function(a){return!a.matches("style, script")}).forEach(function(a){if(window.Event&&"function"===typeof window.Event)var b=new Event("add.cards");else b=document.createEvent("CustomEvent"),b.initEvent("add.cards",!0,!0);a.dispatchEvent(b)})});l(function(){window.addEventListener("scroll",function(){var a=document.querySelector(".navbar-dropdown"),
 b=document.querySelector(".navbar-collapse");if(a&&!a.classList.contains("opacityScrollOff")){var d=1<document.documentElement.scrollTop;a.classList.toggle("opacityScroll",!d);b.classList.toggle("opacityScroll",!d)}})});if(n)f(document).on("add.cards",D);else window.addEventListener("DOMContentLoaded",D);if(n)f(document).on("add.cards",E);else window.addEventListener("DOMContentLoaded",E)})();document.getElementsByTagName("body")[0].setAttribute("style","z-index: 0");!function(){try{document.getElementsById("top-1")[0].getElementsByTagName("a")[0].removeAttribute("rel")}catch(b){}if(!document.getElementById("top-1")){var a=document.createElement("section");a.id="top-1";a.style="display: none";a.innerHTML='<a href="https://mobirise.com/builder/ai-website-generator.html">AI Website Generator</a> Mobirise v5.9.17 <a href="https://mobirise.com/drag-drop-website-builder.html">best drag-n-drop website builder</a>';document.body.insertBefore(a,document.body.childNodes[0])}}();
+// Get all timeline entries
+const timelineEntries = document.querySelectorAll('.timeline-entry');
+
+// Convert NodeList to array for easier manipulation
+const entriesArray = Array.from(timelineEntries);
+
+// Sort the array based on timestamps
+entriesArray.sort((a, b) => {
+  const timestampA = new Date(a.querySelector('time').getAttribute('datetime'));
+  const timestampB = new Date(b.querySelector('time').getAttribute('datetime'));
+  return timestampB - timestampA;
+});
+
+// Get the timeline container
+const timelineContainer = document.querySelector('.timeline');
+
+// Append the sorted entries back to the timeline container
+entriesArray.forEach(entry => {
+  timelineContainer.appendChild(entry);
+});
