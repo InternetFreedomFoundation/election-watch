@@ -180,6 +180,6 @@ function deselectAllFilters() {
 // Event listener for Deselect All button
 document.getElementById('deselectAllFilters').addEventListener('click', deselectAllFilters);
 
-// Event listeners for Clear Filters buttons
-document.getElementById('clearLeftFilters').addEventListener('click', clearLeftFilters);
-document.getElementById('clearRightFilters').addEventListener('click', clearRightFilters);
+// // Event listeners for Clear Filters buttons
+// document.getElementById('clearLeftFilters').addEventListener('click', clearLeftFilters);
+// document.getElementById('clearRightFilters').addEventListener('click', clearRightFilters);
