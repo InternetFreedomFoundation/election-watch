@@ -63,6 +63,41 @@ function isItemInCategories(categories, visibleCategories) {
 }
 
 function reflowEntries() {
+  // Define word mappings with correct case versions
+  const wordMappings = {
+    surveillance: 'ECI',
+    disinformation: 'Disinformation',
+    data_privacy: 'Data Privacy',
+    aadhaar: 'Aadhaar',
+    censorship: 'Censorship',
+    ai: "AI",
+    MeitY: 'MeitY',
+    'Political Party': 'Political Party',
+    "platforms": "Platforms",
+    "surveillance":"Surveillance",
+    eci: "ECI"
+  };
+  // Function to correct the case of specified words in text content
+  function correctWordCase(element) {
+    // Traverse through all child nodes of the element
+    element.childNodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        let content = node.textContent;
+        // Loop through each word mapping and replace
+        Object.keys(wordMappings).forEach(word => {
+          const regex = new RegExp(`\\b${word}\\b`, 'gi'); // \b ensures whole word match
+          content = content.replace(regex, wordMappings[word]);
+        });
+        // Update the text content of the node
+        node.textContent = content;
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        // Recursively process child nodes
+        correctWordCase(node);
+      }
+    });
+  }
+
+  // Reflow timeline entries
   var entries = document.querySelectorAll('.timeline-entry[aria-hidden="false"]');
   for (var i = 0; i < entries.length; i++) {
     var entry = entries[i];
@@ -75,8 +110,21 @@ function reflowEntries() {
     } else {
       entry.classList.add('odd');
     }
+
+    // Apply word corrections within the entry
+    const descriptionElement = entry.querySelector('.timeline-description');
+    const categoryElement = entry.querySelector('.category-text');
+
+    if (descriptionElement) {
+      correctWordCase(descriptionElement);
+    }
+
+    if (categoryElement) {
+      correctWordCase(categoryElement);
+    }
   }
 }
+
 
 function onload() {
   /* We have JS! */
