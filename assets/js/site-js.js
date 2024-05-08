@@ -75,7 +75,8 @@ function reflowEntries() {
     'Political Party': 'Political Party',
     "platforms": "Platforms",
     "surveillance":"Surveillance",
-    eci: "ECI"
+    eci: "ECI",
+    "law enforcement": "Law Enforcement"
   };
   // Function to correct the case of specified words in text content
   function correctWordCase(element) {
